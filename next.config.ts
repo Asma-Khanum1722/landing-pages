@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/',
-        destination: 'https://svraesthetics.co.uk/',
+        destination: '/vitamin-d',
         permanent: false,
       },
     ]
