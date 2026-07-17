@@ -1,5 +1,4 @@
-/* Mobile Sticky CTA */
-.mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 16px; background: var(--navy2); z-index: 9999; border-top: 1px solid rgba(255,255,255,0.1); }
+/* Removed sticky CTA */
 
 /* ══ TOKENS ══════════════════════════════════════════════════ */
 :root {
@@ -612,9 +611,8 @@ body{font-size:.94rem;color:var(--mid);line-height:1.8;margin-bottom:28px;font-w
   .info-grid { grid-template-columns: 1fr; }
   .faq-ans-i { box-sizing: border-box; }
   
-  /* Sticky CTA */
-  .mobile-sticky-cta { display: block !important; }
-  body { padding-bottom: 80px; }
+  /* Removed Sticky CTA */
+  body { padding-bottom: 20px; }
 
   /* PERFORMANCE FIXES FOR MOBILE */
   #nav, #nav.scrolled, .nav-dropdown-menu, .stat-clay, .btn-hero-ghost, .trust-chip {

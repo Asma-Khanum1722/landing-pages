@@ -508,9 +508,6 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
   </div>
 </footer>
 
-<div className="mobile-sticky-cta">
-  <a href="https://svraesthetics.co.uk/book-free-consultation/" className="btn-hero-main" style={{ width: '100%', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'block', padding: '16px' }}>{data.buttonText || 'Book your test'} &nbsp;→</a>
-</div>
     </>
   );
 }
