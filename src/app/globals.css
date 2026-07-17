@@ -627,3 +627,18 @@ body{font-size:.94rem;color:var(--mid);line-height:1.8;margin-bottom:28px;font-w
   .btn-hero-ghost { background: rgba(255,255,255,0.15); }
 }
 
+@media(max-width:400px){
+  /* Adjustments for extra small screens (e.g. Galaxy A-series, iPhone SE) */
+  h1 { font-size: 1.95rem !important; }
+  .hero-h1 { font-size: 1.95rem !important; }
+  h2.stitle { font-size: 1.6rem !important; }
+  h3.stitle { font-size: 1.35rem !important; }
+  .hero-p { font-size: 0.95rem !important; margin-bottom: 24px !important; }
+  .hero-pill { font-size: 0.6rem !important; padding: 5px 10px !important; }
+  .btn-hero-main, .btn-hero-ghost { font-size: 0.9rem !important; padding: 12px 24px !important; }
+  #hero { padding-top: 100px !important; }
+  .stat-clay { padding: 16px !important; }
+  .info-img-wrap { min-height: 200px; }
+  section { padding: 40px 1.2rem !important; }
+}
+
