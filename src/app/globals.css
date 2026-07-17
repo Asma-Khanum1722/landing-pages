@@ -577,14 +577,15 @@ body{font-size:.94rem;color:var(--mid);line-height:1.8;margin-bottom:28px;font-w
   /* Hero Overlap Fix */
   #hero { align-items: flex-start !important; padding-top: 120px !important; min-height: auto !important; padding-bottom: 40px !important; }
   .hero-content { padding-top: 20px !important; padding-bottom: 20px !important; }
-  .hero-left { text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .hero-pill-wrap { justify-content: center; }
-  .hero-p { text-align: center; }
-  .hero-pill { font-size: 0.65rem !important; padding: 6px 12px !important; white-space: normal; text-align: center; justify-content: center; line-height: 1.4; }
+  .hero-left { text-align: center !important; display: flex; flex-direction: column; align-items: center; }
+  .hero-pill-wrap { justify-content: center !important; width: 100%; }
+  .hero-p { text-align: center !important; margin-left: auto; margin-right: auto; }
+  .hero-pill { font-size: 0.65rem !important; padding: 6px 12px !important; white-space: normal; text-align: center !important; justify-content: center; line-height: 1.4; }
 
   /* Typography scaling for mobile */
-  h1 { font-size: 2.3rem !important; }
-  h2.stitle { font-size: 1.8rem !important; margin-bottom: 16px !important; }
+  h1 { font-size: 2.3rem !important; text-align: center !important; }
+  h1.hero-h1 { text-align: center !important; width: 100%; }
+  h2.stitle { font-size: 1.8rem !important; margin-bottom: 16px !important; text-align: center !important; }
   h3.stitle { font-size: 1.5rem !important; }
   .ssub { font-size: 0.95rem !important; line-height: 1.6 !important; }
   
