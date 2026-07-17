@@ -108,7 +108,7 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
     <>
       {/*  ══ NAV ═══════════════════════════════════════════════════  */}
 <nav id="nav">
-  <a href="#" aria-label="SVR Aesthetics">
+  <a href="https://svraesthetics.co.uk/" aria-label="SVR Aesthetics">
     <img src="/SVR-Aesthetics-logo.webp" alt="SVR Aesthetics" className="nav-logo" />
   </a>
   <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
@@ -438,7 +438,9 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
     <div className="footer-top">
 
       <div className="ft-brand g-up">
-        <img src="/SVR-Aesthetics-logo.webp" alt="SVR Aesthetics" />
+        <a href="https://svraesthetics.co.uk/" aria-label="SVR Aesthetics">
+          <img src="/SVR-Aesthetics-logo.webp" alt="SVR Aesthetics" />
+        </a>
         <p>Professional Cosmetic Care To Help You Look And Feel As Good As You Can.</p>
         <div className="ft-social">
           <a href="https://www.facebook.com/svraesthetics" className="social-pill" aria-label="Facebook" target="_blank" rel="noopener">f</a>
