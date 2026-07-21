@@ -1,5 +1,13 @@
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface BloodTestData {
+  linkPrefix?: string;
   id: string;
+  category: string;
+  price: string;
   title: string;
   pillText: string;
   heroHeadingLine1: string;
@@ -10,278 +18,377 @@ export interface BloodTestData {
   aboutTextParagraphs: string[];
   aboutMobileText: string;
   aboutImage: string;
-  faqs?: { question: string; answer: string }[];
+  faqs: FAQ[];
   buttonText: string;
 }
 
 export const bloodTests: Record<string, BloodTestData> = {
   "vitamin-d": {
     id: "vitamin-d",
+    category: "Blood Tests",
+    price: "£49",
     title: "Vitamin D Blood Test",
-    pillText: "Vitamin D Blood Test · Milton Keynes",
-    heroHeadingLine1: "Know Your Levels.",
+    pillText: "Vitamin D Test · Milton Keynes",
+    heroHeadingLine1: "Track Your ",
     heroHeadingHighlight: "Vitamin D",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "Fatigue, low mood, and poor immunity can be linked to low Vitamin D. A simple blood test provides clarity so you can take control of your well-being.",
-    aboutHeading: "About Vitamin D Test",
+    heroHeadingLine2: " Levels.",
+    heroDescription: "Check your Vitamin D levels with our quick and accurate blood test. Essential for bone health, immune function, and overall well-being.",
+    aboutHeading: "About the Vitamin D Blood Test",
     aboutTextParagraphs: [
-      "Vitamin D is essential for strong bones, muscles, and a healthy immune system because it helps absorb calcium and maintain calcium and phosphate levels. Its deficiency leads to low energy levels and bone and muscle pain. The patient is also at increased risk of frequent illness, as it is crucial for supporting immune health.",
-      "Additionally, low levels of vitamin D can lead to bone disorders in children, while very high levels can cause toxicity and other health issues. If you are encountering health issues like this, then your medical specialist will typically recommend a vitamin D test. It determines whether your vitamin D levels are within the optimal range."
+      "Vitamin D is crucial for maintaining healthy bones, teeth, and muscles. It also supports your immune system and helps regulate your mood. Many people in the UK have low levels, especially during winter.",
+      "Our comprehensive blood test will accurately measure your current Vitamin D levels, allowing you to take action if you are deficient and ensure you feel your best."
     ],
-    aboutMobileText: "Fatigue, low mood, and poor immunity can be linked to low Vitamin D. A simple blood test determines whether your levels are optimal, providing clarity so you can take control of your well-being.",
+    aboutMobileText: "Check your Vitamin D levels with our quick and accurate blood test. Essential for bone health and immune function.",
     aboutImage: "vitamin D.webp",
     faqs: [
       {
-        question: "Why is Vitamin D important for my health?",
-        answer: "Vitamin D is essential for strong bones, muscles, and a healthy immune system because it helps absorb calcium and maintain calcium and phosphate levels."
+        question: "How long do results take?",
+        answer: "Results are typically available within 24-48 hours after your sample arrives at our laboratory."
       },
       {
-        question: "What are the symptoms of low Vitamin D?",
-        answer: "Deficiency can lead to low energy levels, fatigue, low mood, poor immunity, and bone and muscle pain."
+        question: "Do I need to fast before this test?",
+        answer: "No, fasting is not required for a Vitamin D blood test. You can eat and drink normally before your appointment."
       }
     ],
     buttonText: "Book Vitamin D Test"
   },
-  "iron": {
-    id: "iron",
-    title: "Iron/Ferritin Blood Test",
-    pillText: "Iron/Ferritin Blood Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Energy.",
-    heroHeadingHighlight: "Iron/Ferritin",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A ferritin test measures the amount of ferritin in your blood, a protein that plays a crucial role in storing iron within your body's cells.",
-    aboutHeading: "About Iron/Ferritin Blood Test",
+  "thyroid": {
+    id: "thyroid",
+    category: "Blood Tests",
+    price: "£75",
+    title: "Thyroid Function Test",
+    pillText: "Thyroid Test · Milton Keynes",
+    heroHeadingLine1: "Restore Your ",
+    heroHeadingHighlight: "Thyroid",
+    heroHeadingLine2: " Harmony.",
+    heroDescription: "A detailed analysis of your thyroid hormones to help identify causes of fatigue, weight changes, and mood swings.",
+    aboutHeading: "About the Thyroid Function Test",
     aboutTextParagraphs: [
-      "A ferritin test measures the amount of ferritin in your blood. Well, if you are wondering what ferritin is, it is a protein that plays a crucial role in storing iron within your body's cells. Iron helps your body make healthy red blood cells. Red blood cells carry oxygen. Having too little or too much iron can indicate serious health problems.",
-      "Healthcare specialists often recommend a ferritin blood test to analyze the amount of iron in your body and evaluate how much of it is stored in your tissues, so they can take proper steps to improve your health.",
-      "Testing both iron and ferritin levels provides them with a clear picture of your iron status and helps detect conditions caused by either iron deficiency or excess iron. Low levels of iron or ferritin may indicate iron-deficiency anemia, whereas high levels may signal conditions such as hemochromatosis."
+      "Your thyroid gland controls your body's metabolism. If it's underactive (hypothyroidism) or overactive (hyperthyroidism), it can cause a wide range of symptoms including unexplained weight changes, chronic fatigue, and depression.",
+      "This test measures key thyroid markers (such as TSH, FT3, and FT4) to give a complete picture of how well your thyroid is working."
     ],
-    aboutMobileText: "A ferritin test measures the amount of ferritin in your blood, a protein that plays a crucial role in storing iron within your body's cells.",
-    aboutImage: "iron-ferritin test.webp",
-    faqs: [
-      {
-        question: "What exactly is ferritin?",
-        answer: "Ferritin is a protein that plays a crucial role in storing iron within your body's cells. Iron itself helps your body make healthy red blood cells that carry oxygen."
-      },
-      {
-        question: "Why should I test both iron and ferritin?",
-        answer: "Testing both provides a clear picture of your iron status to detect conditions caused by either iron deficiency (like anemia) or excess iron (like hemochromatosis)."
-      }
-    ],
-    buttonText: "Book Iron Test"
+    aboutMobileText: "A detailed analysis of your thyroid hormones to help identify causes of fatigue, weight changes, and mood swings.",
+    aboutImage: "thyroid-blood-test.webp",
+    faqs: [],
+    buttonText: "Book Thyroid Test"
   },
   "cholesterol": {
     id: "cholesterol",
+    category: "Blood Tests",
+    price: "£39",
     title: "Cholesterol Test",
     pillText: "Cholesterol Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Risk.",
+    heroHeadingLine1: "Defend Your Health with a ",
     heroHeadingHighlight: "Cholesterol",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A cholesterol test helps assess your risk for narrowed or blocked arteries by measuring levels of different types of cholesterol and fats in your blood.",
-    aboutHeading: "About Cholesterol Test",
+    heroHeadingLine2: " Test.",
+    heroDescription: "A comprehensive lipid panel measuring good and bad cholesterol levels to assess your cardiovascular risk.",
+    aboutHeading: "About the Cholesterol Profile",
     aboutTextParagraphs: [
-      "A cholesterol test is a blood test that is also known as a lipid panel or lipid profile. Cholesterol plays a crucial role in producing hormones. However, if you are dealing with high cholesterol levels, especially low-density lipoprotein (LDL), then it can lead to major health risks.",
-      "This test provides a better insight into your health by measuring the levels of different types of cholesterol and fats (lipids), specifically triglycerides, in your blood. It helps your medical expert assess your risk for narrowed or blocked arteries."
+      "High cholesterol is a major risk factor for heart disease and stroke, yet it usually has no symptoms. A lipid profile measures your total cholesterol, LDL (bad cholesterol), HDL (good cholesterol), and triglycerides.",
+      "Knowing your numbers allows you to make informed dietary and lifestyle changes to protect your cardiovascular health."
     ],
-    aboutMobileText: "A cholesterol test helps assess your risk for narrowed or blocked arteries by measuring levels of different types of cholesterol and fats in your blood.",
+    aboutMobileText: "A comprehensive lipid panel measuring good and bad cholesterol levels to assess your cardiovascular risk.",
     aboutImage: "Cholesterol-Blood-Tests.webp",
-    faqs: [
-      {
-        question: "Why should I get a cholesterol test?",
-        answer: "High cholesterol levels, especially low-density lipoprotein (LDL), can lead to major health risks. This test helps assess your risk for narrowed or blocked arteries."
-      },
-      {
-        question: "What does the cholesterol test measure?",
-        answer: "It measures the levels of different types of cholesterol and fats (lipids), specifically triglycerides, in your blood."
-      }
-    ],
+    faqs: [],
     buttonText: "Book Cholesterol Test"
   },
-  "thyroid": {
-    id: "thyroid",
-    title: "Thyroid Function Test",
-    pillText: "Thyroid Function Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Balance.",
-    heroHeadingHighlight: "Thyroid",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A thyroid function test is a simple blood test that indicates how well your thyroid gland is functioning. This test also diagnoses thyroid gland disorders and assesses the response to treatment.",
-    aboutHeading: "About Thyroid Function Test",
+  "cbc": {
+    id: "cbc",
+    category: "Blood Tests",
+    price: "£45",
+    title: "CBC / Full Blood Count",
+    pillText: "Full Blood Count · Milton Keynes",
+    heroHeadingLine1: "Discover Your Blueprint with a ",
+    heroHeadingHighlight: "Full Blood Count",
+    heroHeadingLine2: ".",
+    heroDescription: "A broad screening test checking for anemia, infection, and many other common diseases.",
+    aboutHeading: "About Full Blood Count (CBC)",
     aboutTextParagraphs: [
-      "A thyroid function test is a simple blood test that indicates how well your thyroid gland is functioning. This test also diagnoses thyroid gland disorders and assesses the response to treatment.",
-      "In simple words, the thyroid produces hormones commonly known as thyroxine (T4) and triiodothyronine (T3). This test evaluates the balance of thyroid hormones and thyroid-stimulating hormone (TSH). Detecting imbalances early plays a crucial role in preventing major health complications."
+      "A Complete Blood Count (CBC) evaluates your overall health and detects a wide range of disorders, including anemia, infection, and leukemia. It measures red blood cells, white blood cells, and platelets."
     ],
-    aboutMobileText: "A thyroid function test is a simple blood test that indicates how well your thyroid gland is functioning. This test also diagnoses thyroid gland disorders and assesses the response to treatment.",
-    aboutImage: "thyroid-blood-test.webp",
-    faqs: [
-      {
-        question: "What does the thyroid function test indicate?",
-        answer: "It evaluates the balance of thyroid hormones—thyroxine (T4) and triiodothyronine (T3)—and thyroid-stimulating hormone (TSH) to see how well your thyroid gland is functioning."
-      },
-      {
-        question: "Why is early detection important?",
-        answer: "Detecting imbalances early plays a crucial role in preventing major health complications and assessing the response to treatment."
-      }
+    aboutMobileText: "A broad screening test checking for anemia, infection, and many other common diseases.",
+    aboutImage: "CBC-full-blood count test.webp",
+    faqs: [],
+    buttonText: "Book Full Blood Count"
+  },
+  "diabetes": {
+    id: "diabetes",
+    category: "Blood Tests",
+    price: "£45",
+    title: "HbA1c/Diabetes Test",
+    pillText: "Diabetes Test · Milton Keynes",
+    heroHeadingLine1: "Take Control with a ",
+    heroHeadingHighlight: "Diabetes",
+    heroHeadingLine2: " Test.",
+    heroDescription: "Measure your average blood sugar levels over the past 2-3 months to screen for or monitor diabetes.",
+    aboutHeading: "About the HbA1c Diabetes Test",
+    aboutTextParagraphs: [
+      "The HbA1c test is a blood test that shows your average blood sugar (glucose) levels over the past two to three months. It is used to diagnose type 2 diabetes and prediabetes, and to monitor how well you are managing your diabetes."
     ],
-    buttonText: "Book Thyroid Test"
+    aboutMobileText: "Measure your average blood sugar levels over the past 2-3 months to screen for or monitor diabetes.",
+    aboutImage: "HbA1c-diabetes test.webp",
+    faqs: [],
+    buttonText: "Book Diabetes Test"
+  },
+  "iron": {
+    id: "iron",
+    category: "Blood Tests",
+    price: "From £35",
+    title: "Iron/Ferritin Blood Test",
+    pillText: "Iron Test · Milton Keynes",
+    heroHeadingLine1: "Revitalize Your ",
+    heroHeadingHighlight: "Iron",
+    heroHeadingLine2: " Reserves.",
+    heroDescription: "Evaluate your body's iron stores to check for deficiency or overload, often causing tiredness or low energy.",
+    aboutHeading: "About Iron and Ferritin Tests",
+    aboutTextParagraphs: [
+      "Iron is essential for producing red blood cells. Low iron levels can lead to anemia, causing fatigue and weakness, while too much iron can be toxic to your organs. This test helps pinpoint the exact cause of your symptoms."
+    ],
+    aboutMobileText: "Evaluate your body's iron stores to check for deficiency or overload, often causing tiredness or low energy.",
+    aboutImage: "iron-ferritin test.webp",
+    faqs: [],
+    buttonText: "Book Iron Test"
   },
   "kidney": {
     id: "kidney",
+    category: "Blood Tests",
+    price: "From £35",
     title: "Kidney Function Test",
-    pillText: "Kidney Function Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Kidneys.",
-    heroHeadingHighlight: "Kidney Function",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A kidney function test is a group of simple blood and urine tests that evaluate how well your kidneys are functioning.",
-    aboutHeading: "About Kidney Function Test",
+    pillText: "Kidney Test · Milton Keynes",
+    heroHeadingLine1: "Optimize Your ",
+    heroHeadingHighlight: "Kidney",
+    heroHeadingLine2: " Health.",
+    heroDescription: "Check how well your kidneys are filtering waste from your blood.",
+    aboutHeading: "About Kidney Function Testing",
     aboutTextParagraphs: [
-      "A kidney function test is a group of simple blood and urine tests that evaluate how well your kidneys are functioning. The kidneys might not function well when they are damaged or under stress, leading to more serious health problems. If you have symptoms of kidney problems, doctors may recommend this test to analyze how efficiently your kidneys filter waste and maintain chemical balance. Detecting problems early leaves room for timely treatment.",
-      "In case your test detects abnormal results, then you must prefer consulting a healthcare provider. Depending on the severity of your condition, they might ask for additional tests, such as urine tests and imaging studies, to accurately examine underlying causes of kidney disease."
+      "Your kidneys remove waste products and excess fluid from your body. A kidney function test measures levels of urea, creatinine, and certain dissolved salts (electrolytes) to determine if your kidneys are working properly."
     ],
-    aboutMobileText: "A kidney function test is a group of simple blood and urine tests that evaluate how well your kidneys are functioning.",
+    aboutMobileText: "Check how well your kidneys are filtering waste from your blood.",
     aboutImage: "kidney-test.webp",
-    faqs: [
-      {
-        question: "Why would I need a kidney function test?",
-        answer: "The kidneys might not function well when they are damaged or under stress. If you have symptoms of kidney problems, this test analyzes how efficiently your kidneys filter waste."
-      },
-      {
-        question: "What happens if the results are abnormal?",
-        answer: "You should consult a healthcare provider. Depending on the severity, they might ask for additional tests, such as imaging studies, to examine underlying causes."
-      }
-    ],
+    faqs: [],
     buttonText: "Book Kidney Test"
   },
   "cortisol": {
     id: "cortisol",
+    category: "Blood Tests",
+    price: "From £35",
     title: "Cortisol Blood Test",
-    pillText: "Cortisol Blood Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Stress.",
+    pillText: "Cortisol Test · Milton Keynes",
+    heroHeadingLine1: "Master Your Stress with a ",
     heroHeadingHighlight: "Cortisol",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A cortisol blood test is a simple blood test that measures the level of cortisol. Abnormal cortisol levels can indicate underlying health issues.",
-    aboutHeading: "About Cortisol Blood Test",
+    heroHeadingLine2: " Test.",
+    heroDescription: "Measure your cortisol levels to evaluate adrenal gland function and stress response.",
+    aboutHeading: "About the Cortisol Test",
     aboutTextParagraphs: [
-      "A cortisol blood test is a simple blood test that measures the level of cortisol. Abnormal cortisol levels can indicate underlying health issues. Moreover, healthcare specialists typically recommend this test when they suspect an underactive or damaged adrenal gland or another condition that could affect cortisol production."
+      "Cortisol is a hormone produced by your adrenal glands, often called the 'stress hormone'. Abnormal levels can indicate disorders of the adrenal glands or pituitary gland, or simply chronic high stress."
     ],
-    aboutMobileText: "A cortisol blood test is a simple blood test that measures the level of cortisol. Abnormal cortisol levels can indicate underlying health issues.",
+    aboutMobileText: "Measure your cortisol levels to evaluate adrenal gland function and stress response.",
     aboutImage: "cortisol blood test.webp",
-    faqs: [
-      {
-        question: "What does the cortisol blood test measure?",
-        answer: "It measures the level of cortisol in your blood. Abnormal cortisol levels can indicate underlying health issues."
-      },
-      {
-        question: "When is this test recommended?",
-        answer: "Healthcare specialists typically recommend this test when they suspect an underactive or damaged adrenal gland or another condition that could affect cortisol production."
-      }
-    ],
+    faqs: [],
     buttonText: "Book Cortisol Test"
   },
   "psa": {
     id: "psa",
+    category: "Blood Tests",
+    price: "From £35",
     title: "PSA / Prostate Test",
-    pillText: "PSA / Prostate Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Prostate.",
-    heroHeadingHighlight: "PSA",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A PSA test is a simple blood test used to measure the amount of prostate-specific antigen in the blood.",
-    aboutHeading: "About PSA / Prostate Test",
+    pillText: "PSA Test · Milton Keynes",
+    heroHeadingLine1: "Proactive ",
+    heroHeadingHighlight: "Prostate",
+    heroHeadingLine2: " Protection.",
+    heroDescription: "A crucial screening test for men to check for prostate enlargement, inflammation, or prostate cancer risk.",
+    aboutHeading: "About the PSA Test",
     aboutTextParagraphs: [
-      "A PSA test is a simple blood test used to measure the amount of prostate-specific antigen in the blood. PSA, a protein that helps liquefy semen, is produced by both normal and cancerous prostate cells. Small amounts of PSA are considered normal. However, high levels can be an early indicator of prostate-related problems. This test plays a crucial role in diagnosing prostate cancer and helps ensure timely medical help to prevent complications."
+      "Prostate-Specific Antigen (PSA) is a protein produced by both normal and malignant cells of the prostate gland. Elevated levels can indicate prostate cancer or noncancerous conditions such as prostatitis or an enlarged prostate."
     ],
-    aboutMobileText: "A PSA test is a simple blood test used to measure the amount of prostate-specific antigen in the blood.",
+    aboutMobileText: "A crucial screening test for men to check for prostate enlargement or cancer risk.",
     aboutImage: "prostate-test.webp",
-    faqs: [
-      {
-        question: "What does the PSA test measure?",
-        answer: "A PSA test measures the amount of prostate-specific antigen in the blood, which is a protein produced by both normal and cancerous prostate cells."
-      },
-      {
-        question: "What do high PSA levels indicate?",
-        answer: "While small amounts of PSA are normal, high levels can be an early indicator of prostate-related problems, including prostate cancer."
-      }
-    ],
-    buttonText: "Book Prostate Test"
-  },
-  "diabetes": {
-    id: "diabetes",
-    title: "HbA1c/Diabetes Test",
-    pillText: "HbA1c/Diabetes Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Blood Sugar.",
-    heroHeadingHighlight: "HbA1c",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "HbA1c is the average blood glucose level; this HbA1c test is performed to measure your blood sugar levels over the past two to three months.",
-    aboutHeading: "About HbA1c/Diabetes Test",
-    aboutTextParagraphs: [
-      "HbA1c is the average blood glucose level; this HbA1c test, also known as the glycated hemoglobin test, is a simple blood test performed to measure your blood sugar levels over the past two to three months. By opting for regular HbA1c testing, you can get a detailed and long-term picture of blood sugar control, helping you make better steps to improve your overall health.",
-      "This test is highly recommended for patients dealing with diabetes or those at risk of developing this condition. If your result indicates high HbA1c, it means that you have too much sugar in your blood and are more likely to develop diabetes complications. The HbA1c test provides your precise HbA1c value for accurate monitoring."
-    ],
-    aboutMobileText: "HbA1c is the average blood glucose level; this HbA1c test is performed to measure your blood sugar levels over the past two to three months.",
-    aboutImage: "HbA1c-diabetes test.webp",
-    faqs: [
-      {
-        question: "What does the HbA1c test measure?",
-        answer: "Also known as the glycated hemoglobin test, it measures your average blood glucose levels over the past two to three months."
-      },
-      {
-        question: "Who should get this test?",
-        answer: "This test is highly recommended for patients dealing with diabetes or those at risk of developing this condition. No fasting is required."
-      }
-    ],
-    buttonText: "Book HbA1c Test"
-  },
-  "cbc": {
-    id: "cbc",
-    title: "CBC / Full Blood Count",
-    pillText: "CBC / Full Blood Count · Milton Keynes",
-    heroHeadingLine1: "Evaluate Overall Health.",
-    heroHeadingHighlight: "CBC",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A Complete Blood Count (CBC) accurately measures the number and quality of different types of blood cells.",
-    aboutHeading: "About CBC / Full Blood Count",
-    aboutTextParagraphs: [
-      "A Complete Blood Count (CBC), also known as a Full Blood Count (FBC), is mostly recommended for evaluating overall health. It is one of the essential blood tests that accurately measures the number and quality of different types of blood cells.",
-      "It gives a clear insight into your hemoglobin and hematocrit levels, and detecting any imbalance or abnormality plays a crucial role as an early indicator of conditions before they seriously affect your health. It allows your healthcare specialist to gain detailed insight into your immune function, oxygen-carrying capacity, and clotting ability."
-    ],
-    aboutMobileText: "A Complete Blood Count (CBC) accurately measures the number and quality of different types of blood cells.",
-    aboutImage: "CBC-full-blood count test.webp",
-    faqs: [
-      {
-        question: "What does a Complete Blood Count (CBC) measure?",
-        answer: "It accurately measures the number and quality of different types of blood cells, including red blood cells, white blood cells, platelets, hemoglobin, and hematocrit levels."
-      },
-      {
-        question: "Why is a CBC recommended?",
-        answer: "It allows healthcare specialists to gain detailed insight into your immune function, oxygen-carrying capacity, and clotting ability as an early indicator of health conditions."
-      }
-    ],
-    buttonText: "Book CBC Test"
+    faqs: [],
+    buttonText: "Book PSA Test"
   },
   "liver": {
     id: "liver",
+    category: "Blood Tests",
+    price: "From £35",
     title: "Liver Function Test",
-    pillText: "Liver Function Test · Milton Keynes",
-    heroHeadingLine1: "Check Your Liver.",
-    heroHeadingHighlight: "Liver Function",
-    heroHeadingLine2: " Testing.",
-    heroDescription: "A liver function test (LFT) plays a crucial role in identifying the root cause of symptoms and monitoring liver disease or damage.",
-    aboutHeading: "About Liver Function Test",
+    pillText: "Liver Test · Milton Keynes",
+    heroHeadingLine1: "Support Your Body with a ",
+    heroHeadingHighlight: "Liver",
+    heroHeadingLine2: " Test.",
+    heroDescription: "Assess the health of your liver by measuring enzymes, proteins, and bilirubin in your blood.",
+    aboutHeading: "About Liver Function Testing",
     aboutTextParagraphs: [
-      "A liver function test (LFT) plays a crucial role in identifying the root cause of symptoms and monitoring liver disease or damage. This simple blood test mainly assesses specific enzymes, proteins, and substances produced or processed by the liver.",
-      "The main purpose of analyzing these substances is that, when your liver is inflamed, damaged, or not working properly, it can cause these levels to rise or fall abnormally, revealing potential health problems. This test is an accurate way to get a proper insight into how your liver is performing its functions and identify liver conditions early."
+      "The liver plays a vital role in detoxifying blood, producing proteins, and aiding digestion. A liver function test can help diagnose liver diseases, monitor treatment, or check for liver damage from medications."
     ],
-    aboutMobileText: "A liver function test (LFT) plays a crucial role in identifying the root cause of symptoms and monitoring liver disease or damage.",
+    aboutMobileText: "Assess the health of your liver by measuring enzymes, proteins, and bilirubin.",
     aboutImage: "liver-function-test.jpg",
+    faqs: [],
+    buttonText: "Book Liver Test"
+  },
+  "iv-vitamin-d": {
+    id: "iv-vitamin-d",
+    linkPrefix: "/blog",
+    category: "IV Vitamin Drips",
+    price: "£50",
+    title: "Vitamin D IV Drip",
+    pillText: "Vitamin D IV Drip · Milton Keynes",
+    heroHeadingLine1: "Experience the ",
+    heroHeadingHighlight: "Vitamin D",
+    heroHeadingLine2: " IV Drip.",
+    heroDescription: "Deliver a powerful, immediate dose of Vitamin D directly into your bloodstream to boost your immune system, improve your mood, and enhance your energy levels.",
+    aboutHeading: "About Vitamin D IV Drip",
+    aboutTextParagraphs: [
+      "Vitamin D is essential for maintaining strong bones, a robust immune system, and optimal mood regulation. Despite its importance, many people in the UK suffer from Vitamin D deficiency due to limited sunlight exposure, particularly during the winter months. A lack of Vitamin D can lead to chronic fatigue, weakened immunity, and even bone pain. Oral supplements can help, but they often have low absorption rates as they must pass through the digestive system.",
+      "Our Vitamin D IV Drip therapy at SVR Aesthetics in Milton Keynes bypasses the digestive tract entirely, delivering a highly concentrated dose of this vital nutrient directly into your bloodstream. This ensures 100% bioavailability, meaning your body can immediately utilise the vitamin to support immune function, boost energy levels, and enhance your overall well-being. It is the fastest and most effective way to restore optimal Vitamin D levels.",
+      "The treatment is administered by our highly trained medical professionals in a comfortable and relaxing clinical environment. During your consultation, we will assess your current health status and determine if a Vitamin D IV Drip is the right choice for you. The procedure takes approximately 30 to 45 minutes, allowing you to relax while your body receives the ultimate wellness boost.",
+      "Whether you are looking to combat seasonal affective disorder (SAD), recover from illness more rapidly, or simply maintain peak physical health, our IV Vitamin D therapy provides rapid and noticeable results. Book your appointment today at SVR Aesthetics and take a proactive step towards long-term health and vitality."
+    ],
+    aboutMobileText: "Deliver a powerful dose of Vitamin D directly into your bloodstream to instantly boost your immunity, mood, and energy.",
+    aboutImage: "vitamin D.webp",
     faqs: [
       {
-        question: "What does a liver function test assess?",
-        answer: "It mainly assesses specific enzymes, proteins, and substances produced or processed by the liver, including ALT, AST, ALP, and bilirubin."
-      },
-      {
-        question: "Why analyze these substances?",
-        answer: "When your liver is inflamed, damaged, or not working properly, it can cause these levels to rise or fall abnormally, revealing potential health problems early."
+        question: "What is the difference between the blood test and the IV drip?",
+        answer: "The blood test is a diagnostic tool used to measure your current Vitamin D levels and check for deficiency. The IV drip is a wellness treatment that actively delivers a high dose of Vitamin D into your body to boost your levels immediately."
       }
     ],
-    buttonText: "Book Liver Test"
+    buttonText: "Book IV Drip"
+  },
+  "vitamin-b12": {
+    id: "vitamin-b12",
+    linkPrefix: "/blog",
+    category: "IV Vitamin Drips",
+    price: "£30",
+    title: "Vitamin B12 IV Drip",
+    pillText: "Vitamin B12 IV Drip · Milton Keynes",
+    heroHeadingLine1: "Boundless Energy with a ",
+    heroHeadingHighlight: "Vitamin B12",
+    heroHeadingLine2: " Drip.",
+    heroDescription: "Experience an immediate boost in your energy levels and overall vitality with our premium Vitamin B12 IV Drip.",
+    aboutHeading: "About Vitamin B12 IV Drip",
+    aboutTextParagraphs: [
+      "Vitamin B12 is a powerhouse nutrient responsible for nerve function, red blood cell production, and the synthesis of DNA. It is a critical component of cellular energy production, yet B12 deficiency is surprisingly common, especially among vegetarians, vegans, and older adults. Symptoms of low B12 can be debilitating, often presenting as severe fatigue, brain fog, mood swings, and general lethargy.",
+      "At SVR Aesthetics, our Vitamin B12 IV Drip offers an immediate and highly effective solution. By delivering pure Vitamin B12 directly into your circulation, we ensure maximum absorption without the interference of digestive enzymes. This direct delivery method provides a rapid and sustained energy boost, instantly lifting the fog of fatigue and restoring your mental clarity and physical stamina.",
+      "This therapy is highly recommended for professionals with demanding schedules, athletes looking for enhanced recovery, or anyone feeling consistently drained. The infusion process is quick, generally taking around 30 minutes, and is performed in our state-of-the-art clinic in Milton Keynes by experienced practitioners. You can return to your daily activities immediately after the treatment with renewed vigor.",
+      "Don't let fatigue hold you back from living your best life. Regular Vitamin B12 infusions can help maintain a healthy nervous system, improve your mood, and keep your energy levels consistently high. Experience the transformative effects of our B12 IV therapy at SVR Aesthetics and reclaim your peak performance today."
+    ],
+    aboutMobileText: "Experience an immediate boost in your energy levels and overall vitality with our premium Vitamin B12 IV Drip.",
+    aboutImage: "vitamin_b12_iv.png",
+    faqs: [],
+    buttonText: "Book IV Drip"
+  },
+  "iv-energy-boost": {
+    id: "iv-energy-boost",
+    linkPrefix: "/blog",
+    category: "IV Vitamin Drips",
+    price: "£150",
+    title: "IV Energy Boost",
+    pillText: "IV Energy Boost · Milton Keynes",
+    heroHeadingLine1: "The Ultimate Recharge: ",
+    heroHeadingHighlight: "IV Energy Boost",
+    heroHeadingLine2: ".",
+    heroDescription: "Combat fatigue and feel instantly revitalized with our specially formulated IV Energy Boost.",
+    aboutHeading: "About IV Energy Boost",
+    aboutTextParagraphs: [
+      "In today\u2019s fast-paced world, chronic stress, poor sleep, and demanding lifestyles can leave you feeling completely depleted. When oral vitamins and dietary changes aren't enough to combat persistent exhaustion, advanced intravenous therapy provides a powerful alternative. Our IV Energy Boost is a specially formulated cocktail of essential vitamins, minerals, and amino acids designed to revitalize your body at the cellular level.",
+      "The proprietary blend used at SVR Aesthetics includes high doses of B-Complex vitamins, Vitamin C, Magnesium, and targeted amino acids. This potent combination works synergistically to enhance ATP production\u2014the primary energy carrier in your cells. By delivering these nutrients intravenously, you achieve 100% absorption instantly, leading to an immediate surge in natural, sustained energy without the crash associated with caffeine or sugar.",
+      "Our clients often report feeling lighter, more focused, and significantly more energized before the 45-minute treatment is even complete. The IV Energy Boost is ideal for recovering from jet lag, preparing for a major athletic event, or simply overcoming the midday slump. It also supports immune function and helps flush out metabolic toxins, leaving you feeling entirely rejuvenated.",
+      "Administered safely in our premium Milton Keynes clinic, this therapy is tailored to meet your unique physiological needs. Say goodbye to reliance on energy drinks and temporary fixes. Invest in your cellular health and unlock boundless, sustainable energy with the IV Energy Boost at SVR Aesthetics."
+    ],
+    aboutMobileText: "Combat fatigue and feel instantly revitalized with our specially formulated IV Energy Boost.",
+    aboutImage: "iv_energy_boost.png",
+    faqs: [],
+    buttonText: "Book IV Drip"
+  },
+  "iv-skin-brightening": {
+    id: "iv-skin-brightening",
+    linkPrefix: "/blog",
+    category: "IV Vitamin Drips",
+    price: "From £100",
+    title: "IV Skin Brightening",
+    pillText: "IV Skin Brightening · Milton Keynes",
+    heroHeadingLine1: "Radiant Glow with ",
+    heroHeadingHighlight: "IV Skin Brightening",
+    heroHeadingLine2: ".",
+    heroDescription: "Rejuvenate your skin and achieve a radiant, youthful glow with our Skin Brightening IV therapy.",
+    aboutHeading: "About IV Skin Brightening",
+    aboutTextParagraphs: [
+      "Radiant, glowing skin starts from within. While topical creams and serums can address the surface of your skin, true cellular rejuvenation requires deep, internal nourishment. Over time, environmental toxins, UV exposure, and oxidative stress can lead to hyperpigmentation, uneven skin tone, and premature aging. Our IV Skin Brightening therapy is designed to combat these issues at the source.",
+      "This advanced infusion features a high concentration of Glutathione, known as the body's 'master antioxidant', alongside high-dose Vitamin C. Glutathione works tirelessly to neutralize free radicals, detoxify the liver, and inhibit the production of melanin\u2014the pigment responsible for dark spots and uneven tone. The result is a naturally brighter, more luminous, and significantly clearer complexion.",
+      "By delivering these powerful antioxidants directly into your bloodstream, SVR Aesthetics ensures complete absorption that oral supplements simply cannot match. The synergistic effect of Glutathione and Vitamin C also boosts collagen production, improving skin elasticity and reducing the appearance of fine lines and wrinkles. It is the ultimate anti-aging and skin-perfecting treatment.",
+      "Experience the pinnacle of aesthetic wellness in our luxurious Milton Keynes clinic. The IV Skin Brightening drip takes roughly 45 to 60 minutes and requires no downtime. For optimal results, a course of treatments is often recommended to achieve and maintain that flawless, lit-from-within glow. Reveal your best skin yet with SVR Aesthetics."
+    ],
+    aboutMobileText: "Rejuvenate your skin and achieve a radiant, youthful glow with our Skin Brightening IV therapy.",
+    aboutImage: "iv_skin_brightening.png",
+    faqs: [],
+    buttonText: "Book IV Drip"
+  },
+  "iv-nad": {
+    id: "iv-nad",
+    linkPrefix: "/blog",
+    category: "IV Vitamin Drips",
+    price: "From £200",
+    title: "IV NAD+",
+    pillText: "IV NAD+ Therapy · Milton Keynes",
+    heroHeadingLine1: "Cellular Rejuvenation with ",
+    heroHeadingHighlight: "IV NAD+",
+    heroHeadingLine2: ".",
+    heroDescription: "Restore cellular energy, improve cognitive function, and slow down the aging process with our NAD+ IV Therapy.",
+    aboutHeading: "About IV NAD+ Therapy",
+    aboutTextParagraphs: [
+      "Nicotinamide Adenine Dinucleotide (NAD+) is a miraculous coenzyme found in every living cell in your body. It is the fundamental catalyst for cellular energy and mitochondrial health. However, as we age, our natural levels of NAD+ decline drastically, leading to visible signs of aging, cognitive decline, reduced metabolic function, and chronic fatigue. Replenishing these levels is the frontier of anti-aging medicine.",
+      "Our IV NAD+ Therapy at SVR Aesthetics is a cutting-edge treatment that floods your system with this vital coenzyme. By restoring your cellular NAD+ pools, this therapy effectively turns back the biological clock. Clients experience profound improvements in mental clarity, memory retention, and concentration. It effectively lifts brain fog and significantly enhances overall cognitive function.",
+      "Beyond the brain, NAD+ therapy promotes cellular repair, DNA protection, and metabolic efficiency. It has been shown to improve mood, aid in addiction recovery, and provide a massive, sustained boost in physical energy. Because it acts on a foundational cellular level, the benefits are comprehensive and long-lasting, far surpassing traditional wellness treatments.",
+      "Administering NAD+ requires a slow and careful infusion process, typically lasting between 2 to 4 hours, all monitored by our expert clinical staff in Milton Keynes. Relax in our premium facility while you receive the ultimate longevity and bio-hacking treatment available today. Invest in your future health and cognitive brilliance with IV NAD+ Therapy."
+    ],
+    aboutMobileText: "Restore cellular energy, improve cognitive function, and slow down the aging process with our NAD+ IV Therapy.",
+    aboutImage: "iv_nad_therapy.png",
+    faqs: [],
+    buttonText: "Book NAD+ Therapy"
+  },
+  "well-man": {
+    id: "well-man",
+    linkPrefix: "/blog",
+    category: "Health Panels",
+    price: "£159",
+    title: "Well Man Profile",
+    pillText: "Well Man Profile · Milton Keynes",
+    heroHeadingLine1: "Peak Performance: ",
+    heroHeadingHighlight: "Well Man",
+    heroHeadingLine2: " Profile.",
+    heroDescription: "A comprehensive health check tailored specifically for men to monitor key health markers.",
+    aboutHeading: "About Well Man Profile",
+    aboutTextParagraphs: [
+      "Proactive health management is the key to longevity and peak performance. The Well Man Profile at SVR Aesthetics is a highly comprehensive, advanced blood panel specifically tailored to address the unique physiological needs of men. This extensive screening goes far beyond a standard check-up, offering a deep dive into your hormonal balance, cardiovascular health, and vital organ function.",
+      "This profile meticulously analyses key biomarkers including testosterone levels, prostate-specific antigen (PSA), full lipid profiles (cholesterol), liver and kidney function, and essential vitamins like D and B12. By establishing a clear baseline of your internal health, we can identify subtle imbalances or early warning signs long before they develop into serious clinical conditions. Knowledge is the ultimate tool for prevention.",
+      "Whether you are an athlete looking to optimize your performance, a professional managing high stress, or simply a man who wants to take control of his long-term health, this panel provides the critical data you need. The blood draw is quick and performed in our private, comfortable clinic in Milton Keynes by our expert phlebotomists, ensuring a seamless and pain-free experience.",
+      "Once your comprehensive results are ready, our clinical team will guide you through the findings, offering tailored advice on lifestyle modifications, supplementation, or further treatments. Stop guessing about your health and start optimizing it. Book your Well Man Profile at SVR Aesthetics today and invest in a healthier, stronger tomorrow."
+    ],
+    aboutMobileText: "A comprehensive health check tailored specifically for men to monitor key health markers.",
+    aboutImage: "well_man_test.png",
+    faqs: [],
+    buttonText: "Book Well Man Test"
+  },
+  "well-woman": {
+    id: "well-woman",
+    linkPrefix: "/blog",
+    category: "Health Panels",
+    price: "£159",
+    title: "Well Woman Profile",
+    pillText: "Well Woman Profile · Milton Keynes",
+    heroHeadingLine1: "Empower Your Wellness: ",
+    heroHeadingHighlight: "Well Woman",
+    heroHeadingLine2: " Profile.",
+    heroDescription: "A comprehensive health check tailored specifically for women to monitor essential health markers.",
+    aboutHeading: "About Well Woman Profile",
+    aboutTextParagraphs: [
+      "Women\u2019s health is complex and dynamic, requiring a nuanced and comprehensive approach to testing. The Well Woman Profile at SVR Aesthetics is our most advanced diagnostic panel, designed specifically to evaluate the intricate balance of female hormones, thyroid function, cardiovascular health, and essential nutritional markers. It is the ultimate health MOT for women of all ages.",
+      "This extensive blood test provides a detailed overview of your internal wellness. It checks critical biomarkers including full thyroid function (TSH, Free T3, Free T4), female hormone profiles (estrogen, progesterone, FSH, LH), iron studies (ferritin), vitamin levels (D and B12), and complete metabolic and lipid panels. This data is vital for diagnosing the root causes of fatigue, weight fluctuations, mood changes, and menstrual irregularities.",
+      "By identifying these subtle imbalances early, you can take targeted action to restore harmony to your body. Whether you are navigating the complexities of menopause, struggling with low energy, or simply prioritizing your long-term wellness, the Well Woman Profile empowers you with clinical certainty. The sample collection is swift and handled with the utmost care in our Milton Keynes clinic.",
+      "Your results will provide a clear, actionable roadmap for your health journey. Our clinical team is dedicated to helping you interpret these findings and guiding you toward the best nutritional, lifestyle, or therapeutic interventions. Prioritize yourself and unlock your optimal health with the Well Woman Profile at SVR Aesthetics."
+    ],
+    aboutMobileText: "A comprehensive health check tailored specifically for women to monitor essential health markers.",
+    aboutImage: "well_woman_test.png",
+    faqs: [],
+    buttonText: "Book Well Woman Test"
   }
 };
