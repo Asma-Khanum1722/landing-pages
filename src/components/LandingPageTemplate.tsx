@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BloodTestData, bloodTests } from '../data/bloodTests';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,26 +108,7 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
   return (
     <>
       {/*  ══ NAV ═══════════════════════════════════════════════════  */}
-<nav id="nav">
-  <a href="https://svraesthetics.co.uk/" aria-label="SVR Aesthetics">
-    <img src="/SVR-Aesthetics-logo.webp" alt="SVR Aesthetics" className="nav-logo" />
-  </a>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-    <div className="nav-dropdown-wrap">
-      <div className="nav-dropdown-trigger">
-        All Tests <span style={{ fontSize: '0.7em', marginTop: '2px' }}>▼</span>
-      </div>
-      <div className="nav-dropdown-menu">
-        {Object.values(bloodTests).map(t => (
-          <a href={`/${t.id}`} key={t.id} className="nav-dropdown-item">{t.title}</a>
-        ))}
-      </div>
-    </div>
-    <a href="https://svraesthetics.co.uk/book-free-consultation/" className="nav-book" id="nav-cta">
-      {data.buttonText || 'Book a Test'} &nbsp;→
-    </a>
-  </div>
-</nav>
+      {/*  ══ NAV ═══════════════════════════════════════════════════  */}
 
 {/*  ══ HERO ══════════════════════════════════════════════════  */}
 <section id="hero" role="banner">
@@ -139,6 +121,9 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
         <div className="hero-pill">
           <span className="dot" aria-hidden="true"></span>
           {data.pillText}
+        </div>
+        <div style={{ padding: '8px 16px', background: 'var(--coral)', color: 'white', borderRadius: '100px', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' }}>
+          {data.price}
         </div>
       </div>
       <h1 className="hero-h1 g-up" id="h-h1">
@@ -222,7 +207,7 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
       {/*  Image Side: Stretches to match text height  */}
       <div className="info-img-col">
         <div className="clay info-img-wrap">
-           <img src={`/${data.aboutImage}`} alt={data.title} style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+           <Image src={`/${data.aboutImage}`} alt={data.title} fill style={{ objectFit: 'cover', display: 'block' }} />
            <div style={{ position: 'absolute', inset: '0', background: 'linear-gradient(135deg, rgba(131,0,233,0.1), transparent 60%)', pointerEvents: 'none' }}></div>
         </div>
       </div>
@@ -332,17 +317,17 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
           <li><div className="perk-dot">✓</div>No GP referral required</li>
           <li><div className="perk-dot">✓</div>Professional clinical environment</li>
         </ul>
-        <p className="pricing-note">Please confirm current pricing when booking online or by calling the clinic.</p>
+        <p className="pricing-note">Transparent, straightforward pricing with no hidden fees.</p>
       </div>
       <div className="g-pop" id="pl-card">
         <div className="price-card-clay">
           <p className="price-eyebrow">{data.title} - Milton Keynes</p>
-          <div className="price-num" style={{ fontSize: "2.8rem", letterSpacing: "-1px", padding: "20px 0", lineHeight: 1.1 }}>Get Your Price</div>
+          <div className="price-num" style={{ fontSize: "3.2rem", letterSpacing: "-1px", padding: "16px 0", lineHeight: 1.1, color: "var(--navy)", fontWeight: 800 }}>{data.price}</div>
           <p className="price-sub">Single appointment · Results within 48–72 hours</p>
           <a href="https://svraesthetics.co.uk/book-free-consultation/" className="btn-book-price" id="price-cta">
             {data.buttonText || 'Book your test'} &nbsp;→
           </a>
-          <p className="price-disclaimer">Pricing confirmed at your free consultation — no obligation.</p>
+          <p className="price-disclaimer">Pricing is inclusive of the clinical blood draw and full diagnostic report.</p>
         </div>
       </div>
     </div>
@@ -404,109 +389,6 @@ export default function LandingPageTemplate({ data }: { data: BloodTestData }) {
     </div>
   </div>
 </section>
-
-{/*  ══ FOOTER ══════════════════════════════════════════════════  */}
-<footer id="footer" role="contentinfo">
-  <div className="footer-inner">
-
-    <div className="ft-reviews-strip g-up">
-      <h4 className="ft-reviews-label">What our clients say <span style={{ color: 'rgba(255,255,255,.35)', fontWeight: '500', fontSize: '.85em' }}>&nbsp;· Google Reviews</span></h4>
-      <div className="ft-reviews-row">
-        <div className="ft-review-card">
-          <div className="ft-stars">★★★★★</div>
-          <p className="ft-review-text">"I fully recommend SVR aesthetics! I was listened to, given good advice and the result of my procedure was even better than I could have hoped for. Fantastic service, amazing result."</p>
-          <span className="ft-review-by">Rachel Robinson</span>
-        </div>
-        <div className="ft-review-card">
-          <div className="ft-stars">★★★★★</div>
-          <p className="ft-review-text">"First time visit and very good experience, felt very comfortable and would definitely recommend to friends and family! Very clean clinic and gives really good skin advice."</p>
-          <span className="ft-review-by">Riya Patel</span>
-        </div>
-        <div className="ft-review-card">
-          <div className="ft-stars">★★★★★</div>
-          <p className="ft-review-text">"Great friendly service! Great product used for lip fillers. Thanks! Holly R."</p>
-          <span className="ft-review-by">Ryan Hill</span>
-        </div>
-        <div className="ft-review-card">
-          <div className="ft-stars">★★★★★</div>
-          <p className="ft-review-text">"Lovely experience and knowledgeable."</p>
-          <span className="ft-review-by">Anne-Marie Mosley</span>
-        </div>
-      </div>
-    </div>
-
-    <div className="footer-top">
-
-      <div className="ft-brand g-up">
-        <a href="https://svraesthetics.co.uk/" aria-label="SVR Aesthetics">
-          <img src="/SVR-Aesthetics-logo.webp" alt="SVR Aesthetics" />
-        </a>
-        <p>Professional Cosmetic Care To Help You Look And Feel As Good As You Can.</p>
-        <div className="ft-social">
-          <a href="https://www.facebook.com/svraesthetics" className="social-pill" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-          <a href="https://www.instagram.com/svraesthetics" className="social-pill" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-        </div>
-        <div className="cqc-badge">
-          <div style={{ width: '28px', height: '28px', background: 'rgba(255,255,255,.15)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '.65rem', fontWeight: '800', color: 'rgba(255,255,255,.7)', letterSpacing: '-.5px' }}>CQC</div>
-          <div className="cqc-txt">Care Quality<br/>Commission</div>
-        </div>
-      </div>
-
-      <div className="ft-col g-up">
-        <h4>Quick Links</h4>
-        <ul className="ft-links">
-          <li><a href="https://svraesthetics.co.uk/about-us/">About Us</a></li>
-          <li><a href="https://svraesthetics.co.uk/treatments/">Treatments</a></li>
-          <li><a href="https://svraesthetics.co.uk/pricing/">Pricing</a></li>
-          <li><a href="https://svraesthetics.co.uk/faq/">FAQ</a></li>
-          <li><a href="https://svraesthetics.co.uk/reviews/">Reviews</a></li>
-          <li><a href="https://svraesthetics.co.uk/contact/">Get In Touch</a></li>
-        </ul>
-      </div>
-
-      <div className="ft-col g-up">
-        <h4>Policies</h4>
-        <ul className="ft-links">
-          <li><a href="https://svraesthetics.co.uk/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="https://svraesthetics.co.uk/terms-conditions/">Terms &amp; Conditions</a></li>
-          <li><a href="https://svraesthetics.co.uk/complaints-policy/">Complaints Policy</a></li>
-        </ul>
-      </div>
-
-      <div className="ft-col g-up">
-        <h4>Working Hours</h4>
-        <div className="hours-grid">
-          <div className="hr-row" id="hr-wkday">
-            <span className="hr-day">Monday – Friday</span>
-            <span className="hr-time">10:00 am – 7:00 pm</span>
-          </div>
-          <div className="hr-row" id="hr-sat">
-            <span className="hr-day">Saturday</span>
-            <span className="hr-time">10:00 am – 8:30 pm</span>
-          </div>
-          <div className="hr-row" id="hr-sun">
-            <span className="hr-day">Sunday</span>
-            <span className="hr-time">Closed</span>
-          </div>
-          <p className="hr-note">Opening times (Appointment only):<br/>Mon–Thur: 10:00 PM – 04:00 PM<br/>Friday – Sat: 10:00 PM – 04:00</p>
-        </div>
-        <br/>
-        <h4>Location</h4>
-        <address style={{ fontSize: '.86rem', color: 'rgba(255,255,255,.65)', fontStyle: 'normal', lineHeight: '1.75', fontWeight: '500' }}>
-          SVR Aesthetics<br/>Milton Keynes, Buckinghamshire<br/>
-          <a href="https://svraesthetics.co.uk/" style={{ color: 'var(--coral)', textDecoration: 'none', fontSize: '.82rem' }}>svraesthetics.co.uk</a>
-        </address>
-      </div>
-
-    </div>
-
-    <div className="footer-bottom">
-      <p>COPYRIGHT &copy; 2026 SVR AESTHETICS | ALL RIGHTS RESERVED. &nbsp;&middot;&nbsp; <a href="https://svraesthetics.co.uk/privacy-policy/">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="https://svraesthetics.co.uk/book-free-consultation/">Book Online</a></p>
-    </div>
-  </div>
-</footer>
 
     </>
   );
