@@ -5,13 +5,13 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--purple), #A425A8);
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 32px rgba(131,0,233, 0.3), inset 2px 2px 5px rgba(255,255,255, 0.4);
+  box-shadow: 0 6px 24px rgba(131,0,233, 0.3), inset 1px 1px 4px rgba(255,255,255, 0.4);
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -26,10 +26,10 @@
 }
 
 #svr-chat-btn svg { 
-  width: 32px; 
-  height: 32px; 
+  width: 22px; 
+  height: 22px; 
   fill: #fff; 
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
 }
 
 /* --- Chat Window --- */
@@ -342,7 +342,7 @@
     bottom: 20px; 
     right: 20px; 
     left: auto; 
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
   }
 }

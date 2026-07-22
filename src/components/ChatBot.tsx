@@ -53,10 +53,13 @@ export default function ChatBot() {
     setIsTyping(true);
 
     try {
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, session: 'svr-web-' + Date.now() })
+        body: JSON.stringify({ 
+          message: text,
+          history: messages.map(m => ({ role: m.type === 'bot' ? 'model' : 'user', text: m.text }))
+        })
       });
 
       if (!res.ok) throw new Error('Network response was not OK');
@@ -136,8 +139,9 @@ export default function ChatBot() {
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
+            disabled={isTyping}
           />
-          <button id="svr-send-btn" aria-label="Send" onClick={sendMessage}>
+          <button id="svr-send-btn" aria-label="Send" onClick={sendMessage} disabled={isTyping}>
             <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
           </button>
         </div>
