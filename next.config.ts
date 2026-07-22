@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/',
-        destination: '/vitamin-d',
+        destination: '/products',
         permanent: false,
       },
     ]

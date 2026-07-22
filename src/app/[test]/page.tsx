@@ -16,9 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ test: str
 }
 
 export function generateStaticParams() {
-  return Object.keys(bloodTests).map((test) => ({
-    test: test,
-  }));
+  return Object.keys(bloodTests)
+    .filter((test) => bloodTests[test].linkPrefix !== '/blog')
+    .map((test) => ({
+      test: test,
+    }));
 }
 
 export default async function TestPage({
@@ -29,7 +31,7 @@ export default async function TestPage({
   const { test } = await params;
   const data = bloodTests[test];
 
-  if (!data) {
+  if (!data || data.linkPrefix === '/blog') {
     notFound();
   }
 
