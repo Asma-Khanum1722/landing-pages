@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Nunito, Poppins } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' });
 const poppins = Poppins({ subsets: ['latin'], weight: ['700', '800', '900'], variable: '--font-poppins' });
@@ -20,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${nunito.variable} ${poppins.variable}`} suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
