@@ -41,7 +41,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "24px" }}>
           {reviews.map((r, idx) => (
             <div key={idx} style={{ background: "white", padding: "32px", borderRadius: "20px", boxShadow: "0 10px 30px rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.03)" }}>
               <div style={{ display: "flex", gap: "4px", marginBottom: "16px" }}>

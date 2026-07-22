@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
 
       {/* BLOG GRID */}
       <section style={{ padding: '40px 24px 100px', maxWidth: '1280px', margin: '0 auto' }}>
-        <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '32px' }}>
+        <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
           {blogPosts.map(post => (
             <ProductCard key={post.id} test={post} />
           ))}

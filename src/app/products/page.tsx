@@ -124,7 +124,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '40px', marginBottom: '80px' }}>
+          <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '40px', marginBottom: '80px' }}>
             {filteredItems.map((test, i) => (
               <div 
                 key={`${test.id}-${activeCategory}`} 
