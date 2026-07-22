@@ -1,7 +1,6 @@
 'use client';
 import { useState, useRef, useEffect, KeyboardEvent } from 'react';
 
-const WEBHOOK_URL = 'https://n8n.srv1751669.hstgr.cloud/webhook/svr-chatbot-webhook';
 const BOOKING_URL = 'https://svraesthetics.co.uk/book-free-consultation/';
 const WHATSAPP_NUMBER = '077 92284575';
 
