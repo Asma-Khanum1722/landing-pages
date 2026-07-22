@@ -98,7 +98,7 @@ export default function Home() {
       <section id="products" style={{ padding: '80px 0', background: '#fff' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           
-          <div className="filter-toggle-wrap" style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }}>
+          <div className="filter-toggle-wrap" style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px', maxWidth: '100%' }}>
             <div className="filter-toggle" style={{ display: 'inline-flex', background: '#f8f9fa', borderRadius: '100px', padding: '6px', border: '1px solid #e9ecef' }}>
               {['All', 'Blood Tests', 'IV Vitamin Drips', 'Health Panels'].map(cat => (
                 <button
