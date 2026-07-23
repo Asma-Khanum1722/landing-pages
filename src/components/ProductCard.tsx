@@ -9,7 +9,7 @@ export default function ProductCard({ test }: { test: BloodTestData }) {
   return (
     <div className="editorial-card">
       <Link href={`${test.linkPrefix || ''}/${test.id}`} className="ed-image-link">
-        <div className="ed-image-wrap" style={{ position: 'relative', width: '100%', height: '200px' }}>
+        <div className="ed-image-wrap" style={{ position: 'relative', width: '100%', height: '100%' }}>
           <Image src={imageUrl} alt={test.title} fill className="ed-image" style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
           <div className="ed-category-badge">{test.category}</div>
         </div>
